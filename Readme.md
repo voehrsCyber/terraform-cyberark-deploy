@@ -6,10 +6,14 @@ This project should help you to install a CyberArk vault into AWS using AMIs.
 * Terraform (tested with 0.14.5)
 * AWS CLI installed (tested with v2)
 * Key pair for AWS password encryption (RSA)
+* AWS CyberArk AMIs
+* Cyberark EPV license file
+
+## Features
+[x] Upload license file (license.txt needs the actual license file content)
+[x] Multi region support (eu-central-1, us-west-2 and us-east-1)
+[x] Multi version support (11.7 and 12.0)
 
 ## TO DO:
-1. Upload license file
-2. Finish installation/setup
-3. Support multiple regions
-4. Support multiple versions
+1. Finish installation/setup
 
