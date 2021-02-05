@@ -1,4 +1,4 @@
-variable "WIN_AMIS" {
+variable "VAULT_AMIS" {
   type = map(map(string))
   default = {
     12.0 = {

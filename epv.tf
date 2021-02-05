@@ -30,7 +30,7 @@ resource "aws_key_pair" "mykey" {
 }
 
 resource "aws_instance" "jpv-vault-12-terraform" {
-  ami                    = var.WIN_AMIS[var.VERSION][var.AWS_REGION]
+  ami                    = var.VAULT_AMIS[var.VERSION][var.AWS_REGION]
   instance_type          = var.INSTANCE_TYPE
   key_name               = aws_key_pair.mykey.key_name
   user_data              = data.template_file.userdata_win.rendered
