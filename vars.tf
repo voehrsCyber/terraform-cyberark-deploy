@@ -4,8 +4,10 @@ variable "PATH_TO_PRIVATE_KEY" { default = "mykey" }
 variable "PATH_TO_PUBLIC_KEY" { default = "mykey.pub" }
 variable "MASTER_PASS" {}
 variable "ADMIN_PASS" {}
-variable "INSTANCE_TYPE" { default = "t2.micro"}
-variable "INSTANCE_NAME" { default = "vault-by-terraform"}
+variable "VAULT_INSTANCE_TYPE" { default = "t2.micro"}
+variable "VAULT_INSTANCE_NAME" { default = "vault-by-terraform"}
+variable "COMPONENTS_INSTANCE_TYPE" { default = "t2.micro"}
+variable "COMPONENTS_INSTANCE_NAME" { default = "components-by-terraform"}
 variable "INSTANCE_USERNAME" { default = "admin" }
 variable "INSTANCE_PASSWORD" {
   type        = string

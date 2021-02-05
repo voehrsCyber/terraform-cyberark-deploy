@@ -1,6 +1,6 @@
 # Deploying a Cyberark vault with Terraform 
 
-This project should help you to install a CyberArk vault into AWS using AMIs.
+This project should help you to install a CyberArk vault and the components server into AWS using AMIs.
 
 # Prerequisites
 * Terraform (tested with 0.14.5)
@@ -14,10 +14,15 @@ This project should help you to install a CyberArk vault into AWS using AMIs.
 - [x] Multi region support (eu-central-1, us-west-2 and us-east-1)
 - [x] Multi version support (11.7 and 12.0)
 - [x] Using KMS creating custom policy and role to access KMS
+- [x] Deploying the components AMI and configuring the PVWA on it.
 
 ## How to run
 Just run terraform apply, if you want to adjust default parameters, please use the standard way of terraform.
 Parameters can be found in vars.tf
 
 ## TO DO:
-1. DR installation
+1. CPM Configuration
+2. PSM Configuration
+3. creating a private network between the components server and the vault
+4. Security Groups review and limiting access 
+5. DR installation
