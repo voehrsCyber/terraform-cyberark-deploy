@@ -10,12 +10,12 @@ terraform {
 data "template_file" "userdata_vault" {
   template = <<EOF
 <powershell>
-net user ${var.INSTANCE_USERNAME} '${var.INSTANCE_PASSWORD}' /add /y
-net localgroup administrators ${var.INSTANCE_USERNAME} /add
 echo ${filebase64("./license.txt")} > tmp2.b64
 certutil -f -decode tmp2.b64 "C:/license.xml"
 & "C:/Program Files (x86)/PrivateArk/Server/CAVaultManager.exe" PostInstall /AdminPass ${var.ADMIN_PASS} /MasterPass ${var.MASTER_PASS} /RecPub "C:/recpub.key" /DRPassword Cyberark1 /LicensePath "C:/license.xml" /AcceptEULA /CloudRegion "${var.AWS_REGION}" /CloudVendor AWS
+Remove-Item "C:/license.xml"
 </powershell>
+<persist>true</persist>
 EOF
 }
 
@@ -24,6 +24,7 @@ data "template_file" "userdata_component" {
 <powershell>
 & "C:/Cyberark/Deployment/PVWAConfiguration.ps1" -VaultIpAddress ${aws_instance.vault-terraform.public_ip} -VaultAdminUser Administrator -VaultPort 1858 -HostName 54.93.249.64
 cd "C:/Cyberark/PVWA/InstallationAutomation/Registration"
+set-sleep -s 180
 & "C:/Cyberark/PVWA/InstallationAutomation/Registration/PVWARegisterComponent.ps1" -pwd ${var.ADMIN_PASS}
 </powershell>
 EOF
