@@ -6,7 +6,7 @@ variable "MASTER_PASS" {}
 variable "ADMIN_PASS" {}
 variable "VAULT_INSTANCE_TYPE" { default = "t2.micro"}
 variable "VAULT_INSTANCE_NAME" { default = "vault-by-terraform"}
-variable "COMPONENTS_INSTANCE_TYPE" { default = "t2.micro"}
+variable "COMPONENTS_INSTANCE_TYPE" { default = "t3.xlarge"}
 variable "COMPONENTS_INSTANCE_NAME" { default = "components-by-terraform"}
 variable "INSTANCE_USERNAME" { default = "admin" }
 variable "INSTANCE_PASSWORD" {

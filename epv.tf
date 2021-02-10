@@ -22,11 +22,16 @@ EOF
 data "template_file" "userdata_component" {
   template = <<EOF
 <powershell>
+start-sleep -s 360
 & "C:/Cyberark/Deployment/PVWAConfiguration.ps1" -VaultIpAddress ${aws_instance.vault-terraform.public_ip} -VaultAdminUser Administrator -VaultPort 1858 -HostName 54.93.249.64
 cd "C:/Cyberark/PVWA/InstallationAutomation/Registration"
-set-sleep -s 180
 & "C:/Cyberark/PVWA/InstallationAutomation/Registration/PVWARegisterComponent.ps1" -pwd ${var.ADMIN_PASS}
+start-sleep -s 360
+& "C:/Cyberark/Deployment/CPMConfiguration.ps1" -VaultIpAddress ${aws_instance.vault-terraform.public_ip} -VaultAdminUser Administrator -VaultPort 1858
+cd "C:/Cyberark/CPM/InstallationAutomation/Registration"
+& "C:/Cyberark/CPM/InstallationAutomation/Registration/CPMRegisterCommponent.ps1" -pwd ${var.ADMIN_PASS}
 </powershell>
+<persist>true</persist>
 EOF
 depends_on = [aws_instance.vault-terraform]
 }
