@@ -21,6 +21,7 @@ This project should help you to install a CyberArk vault and the components serv
 2. Create a RSA key-pair by using ssh-keygen or similar with a local file called mykey
 3. Test the connection and all parameters by running "terraform plan"
 4. If everything works, you can run "terraform apply"
+
 (To change default parameters please use the terraform way, all paramters can be found in vars.tf)
 
 ## TO DO:
