@@ -14,7 +14,7 @@ This project should help you to install a CyberArk vault and the components serv
 - [x] Multi region support (eu-central-1, us-west-2 and us-east-1)
 - [x] Multi version support (11.7 and 12.0)
 - [x] Using KMS creating custom policy and role to access KMS
-- [x] Deploying the components AMI and configuring the PVWA on it.
+- [x] Deploying the components AMI and configuring the PVWA,CPM and PSM on it.
 
 ## How to run
 1. Setup AWS CLI communication by using environemnt variables or via using "aws configure"
@@ -25,8 +25,8 @@ This project should help you to install a CyberArk vault and the components serv
 (To change default parameters please use the terraform way, all paramters can be found in vars.tf)
 
 ## TO DO:
-1. CPM Configuration
-2. PSM Configuration
+1. PSMP installation
+2. PTA installation
 3. creating a private network between the components server and the vault
 4. Security Groups review and limiting access 
 5. DR installation
