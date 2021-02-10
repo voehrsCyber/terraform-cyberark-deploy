@@ -17,8 +17,11 @@ This project should help you to install a CyberArk vault and the components serv
 - [x] Deploying the components AMI and configuring the PVWA on it.
 
 ## How to run
-Just run terraform apply, if you want to adjust default parameters, please use the standard way of terraform.
-Parameters can be found in vars.tf
+1. Setup AWS CLI communication by using environemnt variables or via using "aws configure"
+2. Create a RSA key-pair by using ssh-keygen or similar with a local file called mykey
+3. Test the connection and all parameters by running "terraform plan"
+4. If everything works, you can run "terraform apply"
+(To change default parameters please use the terraform way, all paramters can be found in vars.tf)
 
 ## TO DO:
 1. CPM Configuration
